@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Background="LightGreen"
+             Title="vet"
+             x:Class="INF._04_02_24._01_SG_Mikolaj.MainPage">
+             
+        
+    <VerticalStackLayout>
+        <Label Text="Wizyta u weterynarza" TextColor="Black" Background="SeaGreen" Padding="10" FontSize="30" HorizontalOptions="Fill"/>
+        <Entry Placeholder="imię i nazwisko właściciela" x:Name="imie"/>
+        <Label  Text="Gatunek" TextColor="Black"/>
+        <ListView ItemSelected="Gatunek_ItemSelected" x:Name="gatunek">
+        <ListView.ItemsSource>
+            <x:Array Type=" {x:Type x:String}" >
+                <x:String>pies</x:String>
+                <x:String>kot</x:String>
+                <x:String>swinka</x:String>
+            </x:Array>  
+        </ListView.ItemsSource>
+    </ListView>
+        <HorizontalStackLayout Spacing="20">
+            <Label Text="ile ma lat?" TextColor="Black"/>
+            <Label x:Name="WartoscSlider" Text="0" TextColor="Black"/>
+            <Slider x:Name="theSlider" Minimum="0" Maximum="20" WidthRequest="300" ValueChanged="SliderValue"/>
+        </HorizontalStackLayout>
+        <Entry x:Name="cel" Placeholder="Cel wizyty"/>
+    <TimePicker x:Name="czas" Time="16:00:00" TextColor="Black"/>
+        <Button Text="Ok" WidthRequest="100" Clicked="OnClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
